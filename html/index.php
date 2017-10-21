@@ -1,13 +1,18 @@
+<<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+<center><h1>pilha de LAMP em Docker e Docker Compose</h1><h2>Por GAbriel Sousa</h2></center>
 <?php
-echo "Hello World!";
-$con = mysqli_connect("db","wordpress","wordpress","wordpress");
-
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-  else {
-  	 echo "done";
-  }
+  phpinfo();
 ?>
+  
+  </body>
+</html>
+
+
