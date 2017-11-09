@@ -11,10 +11,12 @@ services:
     build: ./php
     ports:
       - '80:80'
+      - '443:443'
     restart: always
     volumes:
        - ./php/var:/var/log/apache2
        - ./html:/var/www/html
+       - ./apache2:/etc/apache2
     depends_on:
       - db
 volumes:
