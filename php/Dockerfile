@@ -14,7 +14,7 @@ RUN /usr/sbin/a2ensite default-ssl
 RUN /usr/sbin/a2enmod ssl
 
 RUN apt-get update -y && \
-	apt-get install php7.1 libapache2-mod-php7.0 vim -y && \
+	apt-get install php7.0 libapache2-mod-php7.0 vim -y && \
 	apt-get clean && \
 	rm -rf \var\lib\lists\*
 
