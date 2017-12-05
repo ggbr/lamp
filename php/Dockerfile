@@ -1,16 +1,22 @@
-FROM php:7.1-apache
-MAINTAINER Gabriel Sousa ggbr12.neg@gmail.com
+FROM ubuntu:16.04
 
-COPY php.ini /usr/local/etc/php/
-RUN apt-get update \
-  && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng12-dev libmcrypt-dev \
-  && docker-php-ext-install pdo_mysql mysqli gd iconv 
-COPY ./cargoviewer.com.br.conf  /etc/apache2/sites-available/
-COPY ./hosts  /etc/hosts
-RUN a2enmod rewrite 
+MAINTAINER Hoang Nguyen <nbhoangit@gmail.com>
 
-RUN service apache2 restart
-WORKDIR /etc/apache2/sites-available/
-RUN a2ensite cargoviewer.com.br.conf 
+RUN apt-get update -y && \
+	apt-get install -y \
+	apache2 && \
+	apt-get clean && \
+	rm -rf \var\lib\lists\*
 
+RUN a2enmod rewrite
 
+RUN /usr/sbin/a2ensite default-ssl
+RUN /usr/sbin/a2enmod ssl
+
+RUN apt-get update -y && \
+	apt-get install php7.1 libapache2-mod-php7.0 vim -y && \
+	apt-get clean && \
+	rm -rf \var\lib\lists\*
+
+RUN apt-get install -y php7.0-json php7.0-xml php7.0-pdo php7.0-mbstring \
+	php7.0-tokenizer
