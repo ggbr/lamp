@@ -6,27 +6,19 @@ services:
       context: ./bin/webserver
     container_name: 'png-webserver'
     restart: 'always'
-    ports:
-       - "80:80"
-       - "443:443"
     environment:
-     - APACHE_RUN_USER=#1000
-     - TERM=xterm-256color
+VIRTUAL_HOST=domain1.com
     links: 
-      - redis
       - mysql
     volumes: 
       - ./www:/var/www/html
       - ./config/php/php.ini:/usr/local/etc/php/php.ini
       - ./config/vhosts:/etc/apache2/sites-enabled
       - ./logs/apache2:/var/log/apache2
-      - ./config/ssl:/var/ssl
   mysql:
     image: mysql:5.7
     container_name: 'png-mysql'
     restart: 'always'
-    links:
-      - redis
     ports:
       - "3306:3306"
     volumes: 
@@ -37,12 +29,10 @@ services:
       MYSQL_DATABASE: png
       MYSQL_USER: png
       MYSQL_PASSWORD: png
-
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: 'png-phpmyadmin'
     links:
-      - redis
       - mysql
     environment:
       PMA_HOST: mysql
@@ -51,9 +41,3 @@ services:
       - '8081:80'
     volumes: 
       - /sessions
-  redis:
-    image: redis
-    ports:
-      - "6379:6379"
-    environment:
-      - ALLOW_EMPTY_PASSWORD=yes
