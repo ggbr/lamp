@@ -1,0 +1,27 @@
+[Fri Aug 10 23:13:10.209244 2018] [ssl:warn] [pid 1] AH01909: portal.cargoviewer.local:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Aug 10 23:13:10.210407 2018] [ssl:warn] [pid 1] AH01909: cargoviewer.local:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [/var/www/html/public] does not exist
+AH00112: Warning: DocumentRoot [/var/www/html/public] does not exist
+AH00112: Warning: DocumentRoot [/var/www/html/public] does not exist
+AH00112: Warning: DocumentRoot [/var/www/html/public] does not exist
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Fri Aug 10 23:13:15.342139 2018] [ssl:warn] [pid 1] AH01909: portal.cargoviewer.local:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Aug 10 23:13:15.343012 2018] [ssl:warn] [pid 1] AH01909: cargoviewer.local:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Aug 10 23:13:15.376683 2018] [unixd:alert] [pid 18] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+[Fri Aug 10 23:13:15.377348 2018] [unixd:alert] [pid 19] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+[Fri Aug 10 23:13:15.377806 2018] [unixd:alert] [pid 20] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+[Fri Aug 10 23:13:15.378312 2018] [unixd:alert] [pid 21] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+[Fri Aug 10 23:13:15.378656 2018] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.1.20 OpenSSL/1.0.2l configured -- resuming normal operations
+[Fri Aug 10 23:13:15.378680 2018] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Aug 10 23:13:15.378974 2018] [unixd:alert] [pid 22] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+[Fri Aug 10 23:13:32.395700 2018] [unixd:alert] [pid 23] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+AH00112: Warning: DocumentRoot [/var/www/html/public] does not exist
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.5. Set the 'ServerName' directive globally to suppress this message
+[Sat Aug 11 00:29:37.268354 2018] [unixd:alert] [pid 18] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+[Sat Aug 11 00:29:37.268897 2018] [unixd:alert] [pid 19] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+[Sat Aug 11 00:29:37.269661 2018] [unixd:alert] [pid 20] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+[Sat Aug 11 00:29:37.269993 2018] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.1.20 OpenSSL/1.0.2l configured -- resuming normal operations
+[Sat Aug 11 00:29:37.270048 2018] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Sat Aug 11 00:29:37.270079 2018] [unixd:alert] [pid 21] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+[Sat Aug 11 00:29:37.270335 2018] [unixd:alert] [pid 22] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive
+[Sat Aug 11 00:29:58.291335 2018] [unixd:alert] [pid 23] AH02155: getpwuid: couldn't determine user name from uid 1000, you probably need to modify the User directive

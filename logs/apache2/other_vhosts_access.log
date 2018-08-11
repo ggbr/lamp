@@ -1,0 +1,7 @@
+cargoviewer.local:80 172.19.0.1 - - [10/Aug/2018:23:13:32 +0000] "GET / HTTP/1.1" 404 490 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36"
+cargoviewer.local:80 172.19.0.1 - - [10/Aug/2018:23:13:33 +0000] "GET /favicon.ico HTTP/1.1" 404 500 "http://127.0.0.1/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36"
+cargoviewer.local:80 172.19.0.1 - - [10/Aug/2018:23:14:23 +0000] "-" 408 0 "-" "-"
+site.local:80 172.19.0.1 - - [11/Aug/2018:00:29:58 +0000] "GET / HTTP/1.1" 404 490 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36"
+site.local:80 172.19.0.1 - - [11/Aug/2018:00:30:30 +0000] "GET / HTTP/1.1" 404 490 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36"
+site.local:80 172.19.0.1 - - [11/Aug/2018:00:31:21 +0000] "-" 408 0 "-" "-"
+site.local:80 172.19.0.1 - - [11/Aug/2018:00:34:13 +0000] "GET / HTTP/1.1" 404 490 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36"
