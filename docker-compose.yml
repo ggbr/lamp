@@ -4,7 +4,6 @@ services:
   webserver:
     build: 
       context: ./bin/webserver
-    container_name: 'png-webserver'
     restart: 'always'
     ports:
        - "80:80"
@@ -23,7 +22,6 @@ services:
       - ./config/ssl:/var/ssl
   mysql:
     image: mysql:5.7
-    container_name: 'png-mysql'
     restart: 'always'
     links:
       - redis
@@ -40,7 +38,6 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: 'png-phpmyadmin'
     links:
       - redis
       - mysql
