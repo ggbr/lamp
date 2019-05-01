@@ -8,21 +8,18 @@ install:
 	docker-compose exec webserver sh -c "php artisan migrate"
 start:
 	docker-compose up -d
-	docker-compose exec webserver cron
 	docker-compose exec webserver composer install
 stop:
 	docker-compose stop
 restart:
 	docker-compose stop
 	docker-compose up -d
-	docker-compose exec webserver cron
 	docker-compose exec webserver composer install
 reset:
 	docker-compose stop
 	docker-compose rm -f
 	docker-compose build
 	docker-compose up -d
-	docker-compose exec webserver cron
 	docker-compose exec webserver composer install
 remove:
 	docker-compose stop
