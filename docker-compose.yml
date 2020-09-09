@@ -1,11 +1,10 @@
 version: "3"
-
 services:
   webserver:
     build:
-        context: ./www
+        context: .
     ports:
-       - "80:80"
+       - "85:80"
     environment:
      - APACHE_RUN_USER=#1000
      - TERM=xterm-256color
@@ -13,11 +12,9 @@ services:
       - redis
       - mysql
     volumes: 
-      - ./www:/var/www/html
-      - ./config/php/php.ini:/usr/local/etc/php/php.ini
-      - ./config/vhosts:/etc/apache2/sites-enabled
-      - ./logs/apache2:/var/log/apache2
-      - ./config/ssl:/var/ssl
+      - .:/var/www/html
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./default.conf:/etc/apache2/sites-enabled/default.conf
   mysql:
     image: mysql:8.0.18
     links:
