@@ -6,22 +6,52 @@ services:
     ports:
        - "85:80"
     environment:
-     - APACHE_RUN_USER=#1000
-     - TERM=xterm-256color
-    links: 
-      - redis
-      - mysql
+      APP_NAME: Laravel
+      APP_ENV: local
+      APP_KEY: base64:3rnog3KKdUAmh+IbdOIqFFhtECAqaurl/pEg9qY3inc=
+      APP_DEBUG: 1
+      APP_URL: http://localhost
+      LOG_CHANNEL: stack
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: data
+      DB_USERNAME: root
+      DB_PASSWORD: tiger
+      BROADCAST_DRIVER: log
+      CACHE_DRIVER: file
+      QUEUE_CONNECTION: sync
+      SESSION_DRIVER: file
+      SESSION_LIFETIME: 120
+      REDIS_HOST: redis
+      REDIS_PASSWORD: 1234
+      REDIS_PORT: 6379
+      MAIL_DRIVER: smtp
+      MAIL_HOST: smtp.mailtrap.io
+      MAIL_PORT: 2525
+      MAIL_USERNAME: null
+      MAIL_PASSWORD: null
+      MAIL_ENCRYPTION: null
+      PUSHER_APP_ID: 
+      PUSHER_APP_KEY: 
+      PUSHER_APP_SECRET: 
+      PUSHER_APP_CLUSTER: mt1
+      MIX_PUSHER_APP_KEY: "${PUSHER_APP_KEY}"
+      MIX_PUSHER_APP_CLUSTER: "${PUSHER_APP_CLUSTER}"
     volumes: 
       - .:/var/www/html
-      - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./php.ini:/usr/local/etc/php/php.ini
       - ./default.conf:/etc/apache2/sites-enabled/default.conf
+    networks:
+      - default
+      
   mysql:
-    image: mysql:8.0.18
-    links:
-      - redis
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: tiger
       MYSQL_DATABASE: data
+    networks:
+      - default
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -34,10 +64,17 @@ services:
       - '8081:80'
     volumes: 
       - /sessions
+    networks:
+      - default
   redis:
     image: redis
     command: redis-server --requirepass 1234
     environment:
     - ALLOW_EMPTY_PASSWORD=yes
     - REDIS_PASSWORD=1234
+    networks:
+      - default
+
+networks:
+  default:
 

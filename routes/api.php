@@ -13,6 +13,26 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('user/')->group(function(){
+
+    Route::post('/', 'UserController@create');
+    Route::post('/create', 'UserController@create'); 
+
+    Route::post('/login', 'UserController@login');
+
+    Route::post('/login-code', 'UserController@loginCode');
+    Route::post('/validate-code', 'UserController@validateCode')->middleware('validateEmail');
+   
+    Route::get('/valid-email/{email}', 'UserController@existEmail');
+
+    Route::post('/login-social-google', 'UserController@loginRedesocialGoogle');
+    Route::post('/login-social-facebook', 'UserController@loginRedesocialFacebook');
+
+
+    Route::group(['middleware' => ['auth:api']], function () {
+      Route::put('/new-password','UserController@newPassword');
+      Route::get('/', 'UserController@userByToken');
+      Route::put('/', 'UserController@update');
+    });
+    
 });
