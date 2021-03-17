@@ -4,7 +4,7 @@ services:
     build:
         context: .
     ports:
-       - "85:80"
+       - "80:80"
     environment:
       APP_NAME: Laravel
       APP_ENV: local
@@ -32,19 +32,19 @@ services:
       MAIL_USERNAME: null
       MAIL_PASSWORD: null
       MAIL_ENCRYPTION: null
-      PUSHER_APP_ID: 
-      PUSHER_APP_KEY: 
-      PUSHER_APP_SECRET: 
+      PUSHER_APP_ID:
+      PUSHER_APP_KEY:
+      PUSHER_APP_SECRET:
       PUSHER_APP_CLUSTER: mt1
       MIX_PUSHER_APP_KEY: "${PUSHER_APP_KEY}"
       MIX_PUSHER_APP_CLUSTER: "${PUSHER_APP_CLUSTER}"
-    volumes: 
+    volumes:
       - .:/var/www/html
       - ./php.ini:/usr/local/etc/php/php.ini
       - ./default.conf:/etc/apache2/sites-enabled/default.conf
     networks:
       - default
-      
+
   mysql:
     image: mysql:5.7
     environment:
@@ -62,7 +62,7 @@ services:
       PMA_PORT: 3306
     ports:
       - '8081:80'
-    volumes: 
+    volumes:
       - /sessions
     networks:
       - default
