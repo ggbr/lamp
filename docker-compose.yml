@@ -3,8 +3,9 @@ services:
   webserver:
     build:
         context: .
+    command: /bin/bash -c "composer install && npm install  && chmod 777 -R . && npm install && php artisan octane:start --watch --server=swoole --host=0.0.0.0 --port=8000"
     ports:
-       - "80:80"
+       - "80:8000"
     environment:
       APP_NAME: Laravel
       APP_ENV: local
