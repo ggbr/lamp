@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Docker;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $docker = new Docker('/var/run/docker.sock');
+
+    return $docker->dispatchCommand('/v1.41/nodes');
+
+    //return view('welcome');
 });

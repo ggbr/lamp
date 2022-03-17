@@ -3,7 +3,7 @@ services:
   webserver:
     build:
         context: .
-    command: /bin/bash -c "composer install && npm install  && chmod 777 -R . && npm install && php artisan octane:start --watch --server=swoole --host=0.0.0.0 --port=8000"
+    command: /bin/bash -c "composer install && npm install  && chmod 777 -R . && php artisan octane:start  --server=roadrunner --host=0.0.0.0 --rpc-port=6001 --port=8000"
     ports:
        - "80:8000"
     environment:
@@ -43,6 +43,8 @@ services:
       - .:/var/www/html
       - ./php.ini:/usr/local/etc/php/php.ini
       - ./default.conf:/etc/apache2/sites-enabled/default.conf
+      - /var/lib/docker/:/var/lib/docker:ro 
+      - /var/run/docker.sock/:/var/run/docker.sock 
     networks:
       - default
 
